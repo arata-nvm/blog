@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+        <title>SCKOSEN 2019 write-up &middot; $ sleep infinity</title>
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' type='text/css'>
+        <link rel="stylesheet" href="https://arata-nvm.github.io//libraries/normalize.3.0.1.css" />
+        <link rel="stylesheet" href="https://arata-nvm.github.io//css/liquorice.css" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-144-precomposed.png" sizes="144x144" />
+        </head>
+    <body class="li-body">
+
+<header class="li-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <div class="li-brand li-left">
+                <a href="https://arata-nvm.github.io/">$ sleep infinity</a></div>
+                <div class="li-menu li-right">
+                    <span class="li-menu-icon" onclick="javascript:toggle('menu');">&#9776;</span>
+                    <ul id="menu2" class="li-menu-items">
+                        
+                            <li><a href="/about/"> About </a></li>
+                        
+                            <li><a href="/categories"> Categories </a></li>
+                        
+                            <li><a href="/post"> Posts </a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen columns">
+                <ul id="menu" class="li-menu-items li-menu-mobile">
+                    
+                        <li><a href="/about/"> About </a></li>
+                    
+                        <li><a href="/categories"> Categories </a></li>
+                    
+                        <li><a href="/post"> Posts </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <article class="li-article">
+                    <header class="li-article-header">
+                        <h1 class="li-article-title">SCKOSEN 2019 write-up</h1>
+                        <span class="li-article-taxonomies">
+                            
+                                Posted in
+                                
+                                    <a href="https://arata-nvm.github.io//categories/write-up">write-up</a>
+                                
+                            
+
+                            
+                        </span>
+                         - 
+                        <time class="li-article-date">Saturday, November 16, 2019</time>
+                    </header>
+                    <section>
+                        <p>友人2人とチーム&quot;helix&quot;として参加した。</p>
+<h2 id="00-サンプル">00 サンプル</h2>
+<p>自明</p>
+<p><code>CTFKIT{kosen_security_contest}</code></p>
+<h2 id="01-回答は半角で">01 回答は半角で</h2>
+<p>問題分にフラグがURLエンコードされて書かれているのでデコードする。すると全角のフラグが手に入るので、全角と半角を変換してフラグを得る。</p>
+<p><code>CTFKIT{KOREHA_URL_ENCODE_DESU}</code></p>
+<h2 id="02-伝統的な暗号">02 伝統的な暗号</h2>
+<p>キーが3文字ということからヴィジュネル暗号でなんとなくといたらいけた。
+鍵は<code>shk</code></p>
+<p><code>CTFKIT{do_u_know_vigenere_cipher?}</code></p>
+<h2 id="03-20回もやれば暗号と認めてやっても良いだろう">03 20回もやれば、暗号と認めてやっても良いだろう</h2>
+<p>base64で20回暗号化されていた。</p>
+<p><code>CTFKIT{20_times_base64!}</code></p>
+<h2 id="04-復号せよ">04 復号せよ</h2>
+<p>dnSpyでEncrypt.exeを解析した。
+AESとbase64を使用した暗号だった。</p>
+<p><code>CTFKIT{Enjoy_KOSEN_SECCON_2019}</code></p>
+<h2 id="05">05</h2>
+<p>未回答</p>
+<h2 id="06-無言のelf">06 無言のELF</h2>
+<p><code>CTFKIT{hpb5iphbr_et3phet5o} </code></p>
+<h2 id="07-暖かく包み込む">07 暖かく包み込む</h2>
+<p>渡されたexeファイルがUPXで圧縮されていた。
+これを解凍し、文字列を抽出するとそれっぽいものが断片的にあったので、それらからフラグを得る。</p>
+<p><code>CTFKIT{sao_alice_}</code></p>
+<h2 id="08-拡張されたipv6">08 拡張されたIPv6</h2>
+<p>IPv6を整数形式だけでなく複素形式で表現することによって、利用できるアドレスを増やすものらしい。</p>
+<p><code>CTFKIT{RFC8135}</code></p>
+<h2 id="09-プログラミング言語を当てよう">09 プログラミング言語を当てよう</h2>
+<p>ちょうど話題になっていたBlawnのプログラムだった。</p>
+<p><code>CTFKIT{Blawn}</code></p>
+<h2 id="10-ツートントン">10 ツートントン</h2>
+<p>２色のみのpngファイルが渡される。
+横1列に見ていくと1色が続くのは2または5ドッドしかないことに気づくので、2ドットはトン、5ドットはツーだと推測。
+pythonで頑張るとフラグが入手できた。</p>
+<p><code>CTFKIT{TUU=TON=TON=TUU=TON}</code></p>
+<h2 id="11-新人エンジニアの発明">11 新人エンジニアの発明</h2>
+<p>未回答</p>
+<h2 id="12-大人たちの無意味な習慣">12 大人たちの無意味な習慣</h2>
+<p>名前から察した。
+pcapファイルからWiresharkでファイルを抽出する。
+zipファイルが送られたあとにそのパスワードが送られていたので、解凍してフラグを得る。</p>
+<p><code>CTFKIT{majide_muimina_shuukan_dayonee}</code></p>
+<h2 id="13-名前を解決したい">13 名前を解決したい</h2>
+<p>digコマンドで調べるとDNSのTXTレコードに&quot;ip=153.126.212.45&quot;と書かれていた。
+そこにアクセスするとフラグがあった。</p>
+<p><code>CTFKIT{naki_nureshi_megami_no_kikan}</code></p>
+<h2 id="14-お茶をさぐれ">14 お茶をさぐれ</h2>
+<p>apkファイルが渡されるので、適当なツール(dex2jarなど)を使ってソースファイルを得る。
+<code>CTFKIT</code>でgrepをかけると一つファイルがヒットしたので、そのファイルの処理を読んでフラグを得る。</p>
+<p>&ldquo;お茶&quot;はJavaのロゴのこと&hellip;?</p>
+<p><code>CTFKIT{uresino_tea_**}</code></p>
+<h2 id="15-最後に消したファイル">15 最後に消したファイル</h2>
+<p>FAT形式のイメージファイルが渡される。
+testdiskを使用して削除されたファイルを探すとbeelzebub.keyというファイルがあった。
+中身はRSAの秘密鍵だったので、暗号化されているファイルを探す。
+するとmullin.encryptedというファイルが見つかったので、opensslコマンドで復号してフラグを得る。</p>
+<p><code>CTFKIT{Pandemonium_Mont_Blanc}</code></p>
+<h2 id="16-メモリダンプ">16 メモリダンプ</h2>
+<p>未回答</p>
+<h2 id="17-目に見えなくても">17 目に見えなくても</h2>
+<p>HTMLのソースの中にコメントでフラグが書かれていた。</p>
+<p><code>CTFKIT{html_may_be_including_hidden_text}</code></p>
+<h2 id="18-you-are-not-admin">18 you are not admin</h2>
+<p>未回答</p>
+<h2 id="19-jwt">19 JWT</h2>
+<p>未回答</p>
+<h2 id="20-偉くなりたい">20 偉くなりたい</h2>
+<p>フォームの中に一つ隠されていたテキストボックスがあり、値が<code>is_not_admin</code>になっていた。
+ここを<code>is_admin</code>にし、問題文にかかれていたId、パスワードでログインし、フラグを得る。</p>
+<p><code>CTFKIT{}</code></p>
+
+                    </section>
+                </article>
+            </div>
+        </div>
+
+        <div class="row li-author">
+    <div class="sixteen columns">
+        Written by <strong>arata-nvm</strong>
+    </div>
+</div>
+
+
+        <div class="row li-pagination">
+            <div class="eight columns">
+                <div class="li-pagination-previous">
+                    
+                        Later article<br />
+                        <a href="https://arata-nvm.github.io/about/"> About</a>
+                    
+                </div>
+            </div>
+            <div class="eight columns">
+                <div class="li-pagination-next">
+                    
+                        Older article<br />
+                        <a href="https://arata-nvm.github.io/blog/2020/01/31/minictf_3rd_writeup/"> miniCTF 3rd write-up</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="li-page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="sixteen columns">
+                <div class="li-page-footer-legal">
+                    &copy; 2020. All rights reserved. 
+                </div>
+                <div class="li-page-footer-theme">
+                    <span class=""><a href="https://github.com/eliasson/liquorice/">liquorice</a> is a theme for <a href="http://hugo.spf13.com">hugo</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+    <!--
+    function toggle(id) {
+        var e = document.getElementById(id);
+        e.style.display == 'block' ? e.style.display = 'none' : e.style.display = 'block';
+    }
+    
+    </script>
+    
+    </body>
+</html>
+

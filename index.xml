@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>$ sleep infinity</title>
+    <link>https://arata-nvm.github.io/</link>
+    <description>Recent content on $ sleep infinity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 31 Jan 2020 14:14:46 +0900</lastBuildDate>
+    
+	<atom:link href="https://arata-nvm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>miniCTF 3rd write-up</title>
+      <link>https://arata-nvm.github.io/blog/2020/01/31/minictf_3rd_writeup/</link>
+      <pubDate>Fri, 31 Jan 2020 14:14:46 +0900</pubDate>
+      
+      <guid>https://arata-nvm.github.io/blog/2020/01/31/minictf_3rd_writeup/</guid>
+      <description>ソロでチーム&amp;quot;helix&amp;quot;として参加した。1001 点を獲得し、順位は 9 位だった。 00 Welcome 自明 NITAC{sup3r_dup3r_sc0re_serv3r} 01 signature signatureファイル</description>
+    </item>
+    
+    <item>
+      <title>SCKOSEN 2019 write-up</title>
+      <link>https://arata-nvm.github.io/blog/2019/11/16/sckosen_2019_writeup/</link>
+      <pubDate>Sat, 16 Nov 2019 20:16:11 +0900</pubDate>
+      
+      <guid>https://arata-nvm.github.io/blog/2019/11/16/sckosen_2019_writeup/</guid>
+      <description>友人2人とチーム&amp;quot;helix&amp;quot;として参加した。 00 サンプル 自明 CTFKIT{kosen_security_contest} 01 回答は半角で 問題分にフラグがURLエンコードされて書かれ</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://arata-nvm.github.io/about/</link>
+      <pubDate>Wed, 27 Aug 2003 00:00:00 +0900</pubDate>
+      
+      <guid>https://arata-nvm.github.io/about/</guid>
+      <description>Me School: NIT, Tsuyama College
+Accounts Mail: arata04962@gmail.com
+GitHub: arata-nvm
+Twitter: @arata_nvm</description>
+    </item>
+    
+  </channel>
+</rss>
