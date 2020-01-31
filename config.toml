@@ -1,4 +1,4 @@
-baseURL = "https://arata-nvm.github.io/"
+baseURL = "https://arata-nvm.github.io"
 languageCode = "ja-jp"
 DefaultContentLanguage = "ja"
 hasCJKLanguage = true
