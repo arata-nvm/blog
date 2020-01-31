@@ -1,3 +1,23 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://arata-nvm.github.io/"
+languageCode = "ja-jp"
+DefaultContentLanguage = "ja"
+hasCJKLanguage = true
+title = "$ sleep infinity"
+theme = "liquorice"
+
+[permalinks]
+  post = "/blog/:year/:month/:day/:filename/"
+  code = "/:filename"
+
+[params]
+  author = "arata-nvm"
+  categories = true
+
+[menu]
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories"
+  [[menu.main]]
+    name = "Posts"
+    url = "/post"
+
