@@ -6,7 +6,7 @@ title = "$ sleep infinity"
 theme = "liquorice"
 
 [permalinks]
-  post = "/blog/:year/:month/:day/:filename/"
+  post = "/:year/:month/:day/:filename/"
   code = "/:filename"
 
 [params]
