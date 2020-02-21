@@ -6,10 +6,19 @@
     <description>Recent content on $ sleep infinity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 31 Jan 2020 14:14:46 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2020 00:42:59 +0900</lastBuildDate>
     
 	<atom:link href="https://arata-nvm.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020年にすること</title>
+      <link>https://arata-nvm.github.io/blog/2020/02/21/wanttodo_2020/</link>
+      <pubDate>Fri, 21 Feb 2020 00:42:59 +0900</pubDate>
+      
+      <guid>https://arata-nvm.github.io/blog/2020/02/21/wanttodo_2020/</guid>
+      <description>まえがき TODOばかりが増えていき消化できなくなりそうな感じだったため簡単にまとめた。そのうち粒度を細かくしたチェックリスト的なものを作るか</description>
+    </item>
     
     <item>
       <title>miniCTF 3rd write-up</title>
@@ -35,10 +44,7 @@
       <pubDate>Wed, 27 Aug 2003 00:00:00 +0900</pubDate>
       
       <guid>https://arata-nvm.github.io/blog/about/</guid>
-      <description>Me School: NIT, Tsuyama College
-Accounts Mail: arata04962@gmail.com
-GitHub: arata-nvm
-Twitter: @arata_nvm</description>
+      <description>TODO: ここから移行する Accounts Mail: arata04962@gmail.com GitHub: arata-nvm Twitter: @arata_nvm</description>
     </item>
     
   </channel>
