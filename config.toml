@@ -4,6 +4,7 @@ DefaultContentLanguage = "ja"
 hasCJKLanguage = true
 title = "$ sleep infinity"
 theme = "liquorice"
+googleAnalytics = "UA-158885575-1"
 
 [permalinks]
   post = "/:year/:month/:day/:filename/"
