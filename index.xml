@@ -6,10 +6,19 @@
     <description>Recent content on $ sleep infinity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 21 Feb 2020 00:42:59 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 15:47:42 +0900</lastBuildDate>
     
 	<atom:link href="https://arata-nvm.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Zer0pts_2020_writeup</title>
+      <link>https://arata-nvm.github.io/blog/2020/03/10/zer0pts_2020_writeup/</link>
+      <pubDate>Tue, 10 Mar 2020 15:47:42 +0900</pubDate>
+      
+      <guid>https://arata-nvm.github.io/blog/2020/03/10/zer0pts_2020_writeup/</guid>
+      <description>ソロでチーム&amp;quot;helix&amp;quot;として参加した。1909 点を獲得し、順位は 43 位だった。 crypto ROR 以下のソースコードとその実行結果が渡</description>
+    </item>
     
     <item>
       <title>2020年にすること</title>
