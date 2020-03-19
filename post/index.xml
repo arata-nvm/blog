@@ -6,10 +6,19 @@
     <description>Recent content in Posts on $ sleep infinity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 10 Mar 2020 15:47:42 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 06:34:33 +0900</lastBuildDate>
     
 	<atom:link href="https://arata-nvm.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Comfes 2020 に参加した</title>
+      <link>https://arata-nvm.github.io/blog/2020/03/19/comfes_2020/</link>
+      <pubDate>Thu, 19 Mar 2020 06:34:33 +0900</pubDate>
+      
+      <guid>https://arata-nvm.github.io/blog/2020/03/19/comfes_2020/</guid>
+      <description>まえがき 2020年3月9日から18日までオンラインで行われたComputer Festival 2020に参加した。なぜか参加者投票でアプリケーション部門3位</description>
+    </item>
     
     <item>
       <title>zer0pts_2020_writeup</title>
