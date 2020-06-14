@@ -1,5 +1,5 @@
 ---
-title: "zer0pts_2020_writeup"
+title: "zer0pts 2020 writeup"
 date: 2020-03-10T15:47:42+09:00
 ---
 

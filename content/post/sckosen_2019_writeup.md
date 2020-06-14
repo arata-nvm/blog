@@ -1,5 +1,5 @@
 ---
-title: "SCKOSEN 2019 write-up"
+title: "SCKOSEN 2019 writeup"
 date: 2019-11-16T20:16:11+09:00
 categories: ["write-up"]
 ---
@@ -33,7 +33,7 @@ AESとbase64を使用した暗号だった。
 
 `CTFKIT{Enjoy_KOSEN_SECCON_2019}`
 
-## 05 
+## 05
 未回答
 
 ## 06 無言のELF
