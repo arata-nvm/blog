@@ -6,10 +6,19 @@
     <description>Recent content in Posts on $ sleep infinity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 19 Mar 2020 06:34:33 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Dec 2020 06:34:33 +0900</lastBuildDate>
     
 	<atom:link href="https://arata-nvm.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rubyist for iOSについて</title>
+      <link>https://arata-nvm.github.io/blog/2020/12/01/rubyist/</link>
+      <pubDate>Tue, 01 Dec 2020 06:34:33 +0900</pubDate>
+      
+      <guid>https://arata-nvm.github.io/blog/2020/12/01/rubyist/</guid>
+      <description>この記事は SecHack365 Advent Calendar 2020 1日目の記事です。初日なので軽めに書いていきます。 まえがき こんにちは、arataです。学校のテストが終わったのにタスクは増</description>
+    </item>
     
     <item>
       <title>Comfes 2020 に参加した</title>
@@ -21,7 +30,7 @@
     </item>
     
     <item>
-      <title>zer0pts_2020_writeup</title>
+      <title>zer0pts 2020 writeup</title>
       <link>https://arata-nvm.github.io/blog/2020/03/10/zer0pts_2020_writeup/</link>
       <pubDate>Tue, 10 Mar 2020 15:47:42 +0900</pubDate>
       
@@ -48,7 +57,7 @@
     </item>
     
     <item>
-      <title>SCKOSEN 2019 write-up</title>
+      <title>SCKOSEN 2019 writeup</title>
       <link>https://arata-nvm.github.io/blog/2019/11/16/sckosen_2019_writeup/</link>
       <pubDate>Sat, 16 Nov 2019 20:16:11 +0900</pubDate>
       
