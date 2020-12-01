@@ -51,4 +51,10 @@ HTTPリクエストを送ることができます。
 
 ところで、私の愛用するiPhone SE(Gen 1)はそろそろサポートが切られるそうです。次は何にしようか、、、
 
-[^1]: http://rubypico.ongaeshi.me/ja/
+## 補遺1
+
+ちょっとだけRubyistをいじった記録を残しておきます。
+
+- `Kernel#open`を使ったファイルの書き込み・読み込みは可能だった。
+- `TCPServer`を使ってサーバは建てられなかった。~~（`IO#popen`のエラーが発生する）~~
+    - →v1.0(11)で`uninitialized constant TCPServer`のエラーに変わった
